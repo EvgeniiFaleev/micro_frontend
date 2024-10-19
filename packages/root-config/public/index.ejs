@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Micro-Frontend Root Config</title>
+<!--    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.3/dist/system.min.js"></script>-->
+    <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@my-app/header": "//localhost:8500/header.bundle.js",
+        "@my-app/catalog": "//localhost:8501/catalog.bundle.js",
+        "@my-app/cart": "//localhost:8502/cart.bundle.js",
+        "@my-app/vue-app": "//localhost:8503/vue-app.bundle.js",
+        "@my-app/angular-app": "//localhost:8504/angular-app.bundle.js"
+      }
+    }
+  </script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"></script>-->
+<!--    <script src="root-config.bundle.js" type="module"></script>-->
+</head>
+
+<body>
+<main id="single-spa-application:root"></main>
+</body>
+
+</html>
