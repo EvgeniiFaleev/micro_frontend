@@ -1,0 +1,12 @@
+{
+  "name": "micro_frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Evgeniy Faleev <vois.evgenii@gmail.com>",
+  "license": "MIT",
+  "workspaces": ["packages/*"],
+  "dependencies": {
+    "lerna": "^8.1.8"
+  },
+  "private": "true"
+}
