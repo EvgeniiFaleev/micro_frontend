@@ -36,16 +36,22 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "main": "src/main.single-spa.ts",
+            "main": "src/main.ts",
             "customWebpackConfig": {
               "path": "extra-webpack.config.js",
               "libraryName": "cart",
               "libraryTarget": "umd"
             },
-            "deployUrl": "http://localhost:NaN/"
+            "deployUrl": "http://localhost:4200/"
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -64,13 +70,19 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
-              "outputHashing": "none"
+              "outputHashing": "none",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "cart:build:production"
